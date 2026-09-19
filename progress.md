@@ -25,3 +25,22 @@
 - `AGENTS.md`: project guidance and reusable initialization findings.
 - `progress.md`: append-only task and validation record.
 - Rollback: the initial commit is the baseline. Revert individual later commits with `git revert <commit>`. Repository deletion or visibility changes require a separate explicit request.
+
+## 2026-09-19 - Task: Publish and verify the repository
+
+### What was done
+
+- Created the public repository at https://github.com/YunYi-168/linux-docker-ai-lab and published its seven initial files through the GitHub API using sequential commits and a fast-forward branch update.
+- Kept the project labeled as planning-stage documentation without claiming completed tutorials, benchmarks or sponsorship.
+
+### Testing
+
+- GitHub reports public visibility, default branch main and the MIT license.
+- An unauthenticated request to the repository page returned HTTP 200 with the README navigation present.
+- The published Git tree matched the local initial tree exactly, covering all seven tracked files; UTF-8 and configured sensitive-pattern checks passed.
+- Direct Git pushes failed twice with connection resets. Automatic approval review rejected an earlier proposed API command containing a forced ref update; it did not execute. Publication succeeded through ordinary sequential commits and a non-forced ref update.
+
+### Notes
+
+- All seven initial project files were published; only progress.md changes in this follow-up to record publication evidence.
+- Rollback: use git revert on a later change, or restore a file through a new commit. No remote history rewrite is required. Deleting the public repository requires a separate explicit request.
